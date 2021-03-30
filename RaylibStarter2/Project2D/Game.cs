@@ -28,7 +28,7 @@ namespace Project2D
         Image backDrop;
         Texture2D BackDroptexture;
 
-        private string Cons = "Left Shift:  hand Brake                 Movement: WASD                   Turret: Q, E";
+        private string Cons = "Left Shift:  hand Brake | Movement: WASD| Turret: Q, E";
         //----------------------------
         //Tank Images
 

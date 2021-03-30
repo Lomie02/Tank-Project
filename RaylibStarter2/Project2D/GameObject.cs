@@ -11,15 +11,16 @@ namespace Project2D
 {
     class GameObject
     {
-        protected GameObject m_parent;
-        protected List<GameObject> m_children = new List<GameObject>();
-        protected Matrix3 m_LocalTransForm;
-        protected Matrix3 m_GlobalTransForm;
-        protected Image m_sprite;
-        protected Texture2D m_texture;
-        protected float m_fRadious = 0;
+        //-----------------------------------
 
-        protected Vector2 m_min;
+        protected GameObject m_parent;                                                //Parent Object variable
+        protected List<GameObject> m_children = new List<GameObject>();              //List of children for parent 
+        protected Matrix3 m_LocalTransForm;                                         //Local transform of an object 
+        protected Matrix3 m_GlobalTransForm;                                       //Global transform of the level
+        protected Image m_sprite;                                                 //Image variable for GameObjects
+        protected Texture2D m_texture;                                           //texture varible for GameObjects
+        protected float m_fRadious = 0;                                         //Radious for GameObject rotations
+        protected Vector2 m_min;               
         protected Vector2 m_max;
 
         //-----------------------------------
@@ -65,7 +66,6 @@ namespace Project2D
             return m_parent;
         }
 
-        //-----------------------------------
 
 
 
