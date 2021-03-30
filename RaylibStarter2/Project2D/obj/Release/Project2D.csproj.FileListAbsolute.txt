@@ -1,0 +1,6 @@
+D:\RaylibStarter2\Project2D\bin\Release\Project2D.exe.config
+D:\RaylibStarter2\Project2D\bin\Release\Project2D.exe
+D:\RaylibStarter2\Project2D\bin\Release\Project2D.pdb
+D:\RaylibStarter2\Project2D\obj\Release\Project2D.csprojAssemblyReference.cache
+D:\RaylibStarter2\Project2D\obj\Release\Project2D.exe
+D:\RaylibStarter2\Project2D\obj\Release\Project2D.pdb
