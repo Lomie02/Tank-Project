@@ -27,14 +27,15 @@ namespace Project2D
                     //Dont have objects collide with themselves
                     if (obj1 == obj2)
                         continue;
-
+                    if (!obj1.GetCollisionEnabled() || !obj2.GetCollisionEnabled())
+                        continue;
                     //Test collision
 
                     Vector2 obj1Min = obj1.GetMin() + obj1.GetPosition();
-                    Vector2 obj1Max = obj1.GetMin() + obj1.GetPosition();
+                    Vector2 obj1Max = obj1.GetMax() + obj1.GetPosition();
 
-                    Vector2 obj2Min = obj2.GetMin() + obj1.GetPosition();
-                    Vector2 obj2Max = obj2.GetMax() + obj1.GetPosition();
+                    Vector2 obj2Min = obj2.GetMin() + obj2.GetPosition();
+                    Vector2 obj2Max = obj2.GetMax() + obj2.GetPosition();
 
                     if (obj2Max.x > obj1Min.x && obj2Max.y > obj1Min.y && obj2Min.x < obj1Max.x && obj2Min.y < obj1Max.y)
                     {

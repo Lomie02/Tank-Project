@@ -18,7 +18,7 @@ namespace Project2D
         {
             //Bullet = new Bullets("../Images/Bullet.png");
             //Bullet.SetParent(this);
-
+            collisionEnabled = false;
             m_LocalTransForm.m7 = 0;
             m_LocalTransForm.m8 = 25;
         }

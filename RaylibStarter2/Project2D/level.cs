@@ -14,6 +14,7 @@ namespace Project2D
         public level(string Filename) : base(Filename)
         {
             // layer 1
+            collisionEnabled = false;
 
             Cube1 = new Cube("../Images/CubeBox.png");
             Cube1.SetParent(this);

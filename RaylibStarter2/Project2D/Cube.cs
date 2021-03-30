@@ -16,15 +16,10 @@ namespace Project2D
         public Cube(string Filename) : base(Filename)
         { 
             m_LocalTransForm.m7 = 200;        
-            m_LocalTransForm.m8 = 600;
+            m_LocalTransForm.m8 = 400;
         }
 
-        public override void Update(float fDeltaTime)
-        {
-            OnCollision(this);
-
-            base.Update(fDeltaTime);
-        }
+        
 
         
 

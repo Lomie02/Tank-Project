@@ -88,6 +88,7 @@ namespace Project2D
 
             level1.Update(deltaTime);
             level1.UpdateTransForms();
+            CollisionManager.CheckCollision();
 		}
 
         public void Draw()

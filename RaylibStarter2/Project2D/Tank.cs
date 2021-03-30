@@ -62,7 +62,7 @@ namespace Project2D
 
             if (IsKeyPressed(KeyboardKey.KEY_LEFT_SHIFT))
             {
-                m_v2Velocity.y = -10 * fDeltaTime;
+                m_v2Velocity.y = -1 * fDeltaTime;
             }
 
             //Position
@@ -82,6 +82,14 @@ namespace Project2D
 
             base.Update(fDeltaTime);
             
+        }
+        public override void OnCollision(GameObject other)
+        {
+            m_LocalTransForm.m7 = m_previousPos.x;
+            m_LocalTransForm.m8 = m_previousPos.y;
+            UpdateTransForms();
+            m_v2Velocity.x = 0;
+            m_v2Velocity.y = 0;
         }
 
     }

@@ -22,6 +22,8 @@ namespace Project2D
         protected float m_fRadious = 0;                                         //Radious for GameObject rotations
         protected Vector2 m_min;               
         protected Vector2 m_max;
+        protected Vector2 m_previousPos;
+        protected bool collisionEnabled = true;
 
         //-----------------------------------
         public GameObject(string filename)
@@ -35,8 +37,11 @@ namespace Project2D
             m_min.x = -(m_texture.width * 0.5f);
             m_min.y = -(m_texture.height * 0.5f);
 
-            m_min.x = (m_texture.width * 0.5f);
-            m_min.y = (m_texture.height * 0.5f);
+            m_max.x = (m_texture.width * 0.5f);
+            m_max.y = (m_texture.height * 0.5f);
+
+            CollisionManager.AddObject(this);
+
         }
 
         //-----------------------------------
@@ -84,10 +89,17 @@ namespace Project2D
         public void UpdateTransForms()
         {
 
+
             if (m_parent != null)
+            {
+                m_previousPos = GetPosition() - m_parent.GetPosition();
                 m_GlobalTransForm = m_parent.m_GlobalTransForm * m_LocalTransForm;
+            }
             else
+            {
+                m_previousPos = GetPosition();
                 m_GlobalTransForm = m_LocalTransForm;
+            }
 
             foreach (GameObject child in m_children)
             {
@@ -109,9 +121,11 @@ namespace Project2D
 
         //-----------------------------------
 
-        public void OnCollision(GameObject other)
+        public virtual void OnCollision(GameObject other)
         {
-
+            m_LocalTransForm.m7 = m_previousPos.x;
+            m_LocalTransForm.m8 = m_previousPos.y;
+            UpdateTransForms();
         }
 
         //-----------------------------------
@@ -152,5 +166,10 @@ namespace Project2D
             return m_max;
         }
         //-----------------------------------
+
+        public bool GetCollisionEnabled()
+        {
+            return collisionEnabled;
+        }
     }
 }
