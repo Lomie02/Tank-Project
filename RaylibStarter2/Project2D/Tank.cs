@@ -15,9 +15,10 @@ namespace Project2D
         private Vector3 m_v2Velocity;
         private int m_nHP;
         private int m_nAmmo;
-        private float m_fSpeed = 10.0f;
+        private float m_fSpeed = 20.0f;
         private float m_fRotationSpeed = 1.0f;
         Turret Turret1 = null;
+
         //public float m_Speed = 3.0f;
         
         public Tank(string fileName) : base(fileName)
@@ -91,6 +92,5 @@ namespace Project2D
             m_v2Velocity.x = 0;
             m_v2Velocity.y = 0;
         }
-
     }
 }

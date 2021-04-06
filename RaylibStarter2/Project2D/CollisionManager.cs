@@ -27,6 +27,7 @@ namespace Project2D
                     //Dont have objects collide with themselves
                     if (obj1 == obj2)
                         continue;
+
                     if (!obj1.GetCollisionEnabled() || !obj2.GetCollisionEnabled())
                         continue;
                     //Test collision

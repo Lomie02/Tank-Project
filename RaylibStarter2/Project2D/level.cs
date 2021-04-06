@@ -10,6 +10,7 @@ namespace Project2D
     {
         Tank Tank1 = null;
         Cube Cube1 = null;
+        Cube2 Cube2 = null;
         
         public level(string Filename) : base(Filename)
         {
@@ -18,6 +19,9 @@ namespace Project2D
 
             Cube1 = new Cube("../Images/CubeBox.png");
             Cube1.SetParent(this);
+
+            Cube2 = new Cube2("../Images/CubeBox.png");
+            Cube2.SetParent(this);
 
             // Layer 2
 

@@ -32,8 +32,10 @@ namespace Project2D
         //----------------------------
         //Tank Images
 
+        
+       
         level level1 = null;
-
+        
         //----------------------------
 
         //----------------------------
@@ -53,17 +55,17 @@ namespace Project2D
                 Console.WriteLine("Stopwatch high-resolution frequency: {0} ticks per second", Stopwatch.Frequency);
             }
 
-			//Initialize objects here
+            //Initialize objects here
             backDrop = LoadImage("../Images/Mud1.png");
             BackDroptexture = LoadTextureFromImage(backDrop);
 
             //-------------------------------------------
 
             level1 = new level("");
-           
-            //-------------------------------------------
-                      
+            
+            
         }
+            
 
         public void Shutdown()
         {
@@ -88,6 +90,9 @@ namespace Project2D
 
             level1.Update(deltaTime);
             level1.UpdateTransForms();
+
+           
+
             CollisionManager.CheckCollision();
 		}
 
@@ -97,7 +102,7 @@ namespace Project2D
 
             ClearBackground(RLColor.BLACK);
 
-            // Draw the BackGround
+            // Draw the BackGroundb
             DrawTexture( BackDroptexture, GetScreenWidth() / 2 - BackDroptexture.width / 2, GetScreenHeight() / 2 - BackDroptexture.height / 2, RLColor.WHITE);
             
 			//Draw game objects here

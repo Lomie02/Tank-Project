@@ -24,7 +24,7 @@ namespace Project2D
         protected Vector2 m_max;
         protected Vector2 m_previousPos;
         protected bool collisionEnabled = true;
-
+        protected bool Visability = true;
         //-----------------------------------
         public GameObject(string filename)
         {
@@ -71,9 +71,6 @@ namespace Project2D
             return m_parent;
         }
 
-
-
-
         //-----------------------------------
 
         public virtual void Update(float fDeltaTime)
@@ -88,7 +85,6 @@ namespace Project2D
 
         public void UpdateTransForms()
         {
-
 
             if (m_parent != null)
             {
@@ -170,6 +166,11 @@ namespace Project2D
         public bool GetCollisionEnabled()
         {
             return collisionEnabled;
+        }
+
+        public bool GetVisability()
+        {
+            return Visability;
         }
     }
 }
