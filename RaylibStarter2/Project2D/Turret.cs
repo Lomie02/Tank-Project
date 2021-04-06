@@ -11,7 +11,7 @@ namespace Project2D
 {
     class Turret : GameObject
     {
-        Bullets Bullet = null;
+        //Bullets Bullet = null;
         private float TurretAngle = 1.0f;
 
         public Turret(string Filename) : base(Filename)
@@ -27,12 +27,12 @@ namespace Project2D
         {
             float angle = 0.0f;
 
-            if (IsKeyDown(KeyboardKey.KEY_Q))
+            if (IsKeyDown(KeyboardKey.KEY_Q) && Visability)
             {
                 angle -= TurretAngle * fDeltaTime;
             }
 
-            if (IsKeyDown(KeyboardKey.KEY_E))
+            if (IsKeyDown(KeyboardKey.KEY_E) && Visability)
             {
                 angle += TurretAngle * fDeltaTime;
             }

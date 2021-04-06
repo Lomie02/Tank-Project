@@ -11,7 +11,7 @@ namespace Project2D
 {
     class Cube : GameObject
     {
-        private float m_fRotationSpeed = 1.0f;
+        //private float m_fRotationSpeed = 1.0f;
 
         public Cube(string Filename) : base(Filename)
         { 

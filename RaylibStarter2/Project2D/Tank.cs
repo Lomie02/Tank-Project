@@ -13,9 +13,9 @@ namespace Project2D
     {
 
         private Vector3 m_v2Velocity;
-        private int m_nHP;
-        private int m_nAmmo;
-        private float m_fSpeed = 20.0f;
+        //private int m_nHP;
+        //private int m_nAmmo;
+        private float m_fSpeed = 40.0f;
         private float m_fRotationSpeed = 1.0f;
         Turret Turret1 = null;
 
@@ -44,17 +44,17 @@ namespace Project2D
                 m_v2Velocity.y -= m_fSpeed * fDeltaTime;
             }
 
-            if (IsKeyDown(KeyboardKey.KEY_S))
+            if (IsKeyDown(KeyboardKey.KEY_S) && Visability)
             {
                 m_v2Velocity.y += m_fSpeed * fDeltaTime;
             }
 
-            if (IsKeyDown(KeyboardKey.KEY_A))
+            if (IsKeyDown(KeyboardKey.KEY_A) && Visability)
             {
                 angle -= m_fRotationSpeed * fDeltaTime;
             }
 
-            if (IsKeyDown(KeyboardKey.KEY_D))
+            if (IsKeyDown(KeyboardKey.KEY_D) && Visability)
             {
                 angle += m_fRotationSpeed * fDeltaTime;
             }
@@ -81,16 +81,34 @@ namespace Project2D
             rotation.SetRotateZ(angle);
             m_LocalTransForm = m_LocalTransForm * rotation;
 
+            if(IsKeyPressed(KeyboardKey.KEY_H) && Visability)
+            {
+                Visability = false;
+
+                m_LocalTransForm.m7 = m_previousPos.x;
+                m_LocalTransForm.m8 = m_previousPos.y;
+                m_v2Velocity.x = 0;
+                m_v2Velocity.y = 0;
+            }
+            else if(IsKeyPressed(KeyboardKey.KEY_H) && !Visability)
+            {
+                Visability = true;
+            }
+
+
             base.Update(fDeltaTime);
             
         }
         public override void OnCollision(GameObject other)
         {
-            m_LocalTransForm.m7 = m_previousPos.x;
-            m_LocalTransForm.m8 = m_previousPos.y;
-            UpdateTransForms();
-            m_v2Velocity.x = 0;
-            m_v2Velocity.y = 0;
+            if (Visability)
+            {
+                m_LocalTransForm.m7 = m_previousPos.x;
+                m_LocalTransForm.m8 = m_previousPos.y;
+                UpdateTransForms();
+                m_v2Velocity.x = 0;
+                m_v2Velocity.y = 0;
+            }
         }
     }
 }

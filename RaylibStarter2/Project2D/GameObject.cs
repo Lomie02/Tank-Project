@@ -108,11 +108,16 @@ namespace Project2D
 
         public void Draw()
         {
-            Renderer.DrawTexture(m_texture, m_GlobalTransForm, RLColor.WHITE.ToColor());
-            foreach (GameObject child in m_children)
+            if (Visability)
             {
-                child.Draw();
+
+                Renderer.DrawTexture(m_texture, m_GlobalTransForm, RLColor.WHITE.ToColor());
+                foreach (GameObject child in m_children)
+                {
+                    child.Draw();
+                }
             }
+            
         }
 
         //-----------------------------------
